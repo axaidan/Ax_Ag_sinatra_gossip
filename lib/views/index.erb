@@ -4,11 +4,15 @@
 	</head>
 	<body>
 		<h1>Bienvenue dans notre site de gossip !</h1>
-
-	  <p>Pour venir bitcher c'est pas ici, tu decouvriras bientot la liste de tous les gossip, XOXO</p>
-
-    <a href="/gossips/new/">Ajouter un gossip</a>
-
+		<p>Tous les gossips :</p>
+		<% variable.each do |gossip| %>
+			<p style="margin: 10px 30px">
+				<%= gossip.author %><br/>
+				<%= gossip.content %>
+			</p>
+		<% end %>
+		<p>Pour venir bitcher c'est par ici !</p>
+		<a href="/gossips/new/">Ajouter un gossip</a>
 
 	</body>
 </html>
