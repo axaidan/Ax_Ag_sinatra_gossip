@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Editer un potin</title>
+	</head>
+	<body>
+		<h1>Edite un potin !</h1>
+		<h2>Potin numero <%= variable[0] %></h2>
+		<h3>Version actuelle</h3>
+		<p>auteur : <%= variable[1] %></p>
+		<p>potin : <%= variable[2] %></p>
+		<h3>Edite ton potin</h3>
+		<form action='/gossips/<%= variable[0] %>/edit/' method='POST'>
+			Editer l'auteur :  <input type='text' name='gossip_author'/><br/>
+			Editer le potin : <input type='text' name='gossip_content'/><br/>
+			<input type='submit'/>
+		</form>
+		<a href="/">Page d'accueil</a>
+	</body>
+</html>

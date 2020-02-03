@@ -19,4 +19,16 @@ class Gossip
 		end
 		return all_gossips
 	end
+
+	def self.find(n)
+		found = self.all[n]
+	end
+
+	def self.rewrite_db(arr)
+		db = File.open("./db/gossip.csv", "w")
+		arr.each do |gossip|
+			db.puts "#{gossip.author},#{gossip.content}"
+		end
+		db.close
+	end
 end

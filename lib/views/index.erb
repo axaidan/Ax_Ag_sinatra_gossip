@@ -5,14 +5,14 @@
 	<body>
 		<h1>Bienvenue dans notre site de gossip !</h1>
 		<p>Tous les gossips :</p>
-		<% variable.each do |gossip| %>
+		<% variable.each_with_index do |gossip, i| %>
 			<p style="margin: 10px 30px">
 				<%= gossip.author %><br/>
-				<%= gossip.content %>
+				<%= gossip.content %><br/>
 			</p>
+			<a style="margin-left: 30px" href="/gossips/<%= i %>/">Acceder</a>
 		<% end %>
 		<p>Pour venir bitcher c'est par ici !</p>
 		<a href="/gossips/new/">Ajouter un gossip</a>
-
 	</body>
 </html>
